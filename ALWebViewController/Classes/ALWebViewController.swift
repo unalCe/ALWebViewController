@@ -13,7 +13,7 @@ public enum ALWebContentType {
     case html(html: String)
 }
 
-public class ALWebViewController: UIViewController {
+open class ALWebViewController: UIViewController {
     
     var content: ALWebContentType
     
