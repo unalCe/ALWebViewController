@@ -21,7 +21,7 @@ open class ALWebViewController: UIViewController {
     
     private var htmlString: String?
     
-    private lazy var webView: WKWebView = {
+    open lazy var webView: WKWebView = {
         var view = WKWebView()
         return view
     }()
@@ -32,7 +32,7 @@ open class ALWebViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -42,12 +42,12 @@ open class ALWebViewController: UIViewController {
         view.addSubview(webView)
     }
     
-    override public func viewWillLayoutSubviews() {
+    override open func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         webView.frame = view.frame
     }
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         load()
     }
